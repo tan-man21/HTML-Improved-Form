@@ -15,15 +15,21 @@
         <form method="GET" action="results.html">
             <div>
                 <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
+                <span class="required-field">*</span>
+                <input type="text" id="firstname" name="firstname" required minlength="2" maxlength="35">
                 <label for="lastname">Your Last Name</label>
-                <input type="text" id="lastname" name="lastname">
+                <span class="required-field">*</span>
+                <input type="text" id="lastname" name="lastname" required minlength="2" maxlength="35">
+                <label for="age">Your Age</label>
+                <input type="number" name="age" id="age" min="21" max="120">
+                <h5>*You must be 21 or older to enter this contest.</h5>
             </div>
             <fieldset>
                 <legend>Your Contact Info</legend>
                 <div>
                     <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email">
+                    <span class="required-field">*</span>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <div>
                     <label for="address">Your Street Address</label>
@@ -86,7 +92,7 @@
                         <option value="WY">Wyoming</option>
                     </datalist>
                     <label for="zip">Your Zipcode</label>
-                    <input type="text" id="zip" name="zip">
+                    <input type="text" id="zip" name="zip" pattern="[0-9]{5}" title="5-Digit US Zipcode">
                 </div>
             </fieldset>
 
@@ -131,7 +137,11 @@
                     <label for="drinks">All-inclusive Drinks Package</label>
                 </div>
             </fieldset>
-            
+
+            <label for="pasword">Your Secret Code (must be 6 alphanumeric characters)</label>
+            <span class="required-field">*</span>
+            <input type="password" name="password" id="password" required title="6 Alphanumeric Character Passcode" pattern="[0-9A-Za-z]{6}">
+            <hr>
             <input type="submit" value="Enter the Contest!">
         </form>
     </main>
